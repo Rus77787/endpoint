@@ -4,13 +4,13 @@ import requests
 st.title('Bitrix24 Webhook')
 
 # Bitrix24 Webhook URL
-url = "https://your-bitrix24-url/rest/1/webhook/"
+url = "https://rosasprings.bitrix24.ru/rest/290/webhook/"
 
 # Payload for the webhook
 payload = {
     "event": "ONCRMPRODUCTADD",
-    "handler": "https://your-streamlit-url/webhook-handler",
-    "auth": "your-authentication-code"
+    "handler": "https://rus77787-endpoint-endpoint-jfv8hn.streamlit.app/",
+    "auth": "hdejdfhk7gazkb4ukj515towfpqhpnqm"
 }
 
 # Function to create the webhook
