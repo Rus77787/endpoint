@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit.web.server.websocket_headers import _getwebsocket_headers
+from streamlit.web.server.websocket_headers import _get_websocket_headers
 import requests
 import json
 
