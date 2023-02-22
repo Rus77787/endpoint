@@ -14,13 +14,7 @@ payload = {
     "auth": "hdejdfhk7gazkb4ukj515towfpqhpnqm"
 }
 
-data = requests.get(url)
-if data['event'] == 'ONCRMPRODUCTADD':
-    deal = data['data']['FIELDS']
-    deals.append(deal)
-    st.write(deals)
-        
-
-requests.post(url, data=json.dumps(data), headers=payload)
+data = { 'name': 'This is an example for webhook' }
+requests.post(webhook_url, data=json.dumps(data), headers=payload)
 
 
