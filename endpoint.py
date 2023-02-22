@@ -8,7 +8,7 @@ TOKEN = 'hdejdfhk7gazkb4ukj515towfpqhpnqm'
 
 # Define the event type and data to be sent to the webhook
 EVENT_TYPE = 'ONCRMDEALADD'
-EVENT_DATA = {'deal_name': ID}
+EVENT_DATA = {'deal_name': 'ID'}
 
 # Create a button in Streamlit to trigger the webhook
 if st.button('Trigger Webhook'):
@@ -22,3 +22,31 @@ if st.button('Trigger Webhook'):
             
     else:
         st.error('Failed to trigger webhook.')
+
+        
+
+# Define the route for the webhook endpoint
+@st.cache(allow_output_mutation=True)
+def webhook(request):
+    # Get the JSON data from the request
+    data = json.loads(request)
+    
+    # Check the event type
+    if data['event_type'] == EVENT_TYPE:
+        # Get the data for the new deal event
+        deal_data = data['event_data']
+        
+        # Display the deal data in Streamlit
+        st.write('New deal created:')
+        st.write(deal_data)
+    
+    return 'Webhook received.'
+
+# Run the app
+if __name__ == '__main__':
+    # Get the request data from Bitrix24
+    request = st.text_input('Bitrix24 Request Data')
+    
+    # Trigger the webhook
+    if request:
+        webhook(request)
