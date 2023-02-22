@@ -5,8 +5,8 @@ import requests
 BITRIX_WEBHOOK_URL = "http://endpoint.streamlit.app"
 
 # Define the event type and data to be sent to the webhook
-EVENT_TYPE = 'new_deal'
-EVENT_DATA = {'deal_name': 'New Deal'}
+EVENT_TYPE = 'ONCRMDEALADD'
+EVENT_DATA = {'deal_name': 'ID'}
 
 # Create a button in Streamlit to trigger the webhook
 if st.button('Trigger Webhook'):
