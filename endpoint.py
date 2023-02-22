@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit.report_thread import get_report_ctx
 import requests
 import json
 
@@ -20,7 +21,7 @@ def handle_webhook(data):
 st.title("Bitrix24 Webhook Endpoint")
 
 # Listen for incoming webhook requests
-report_ctx = st._get_report_ctx()
+report_ctx = get_report_ctx()
 if report_ctx is not None:
     request_body = report_ctx.request_body_bytes
     if request_body:
