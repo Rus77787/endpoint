@@ -18,19 +18,7 @@ if st.button('Trigger Webhook'):
     # Check the status code of the response to ensure the webhook was successful
     if response.status_code == 200:
         st.success('Webhook triggered successfully!')
-        
-        
-        # Get the JSON data from the request
-        data = json.loads(requests.data)
-        # Check the event type
-        if data['event_type'] == EVENT_TYPE:
-            # Get the data for the new deal event
-            deal_data = data['event_data']
-
-            # Display the deal data in Streamlit
-            st.write('New deal created:')
-            st.write(deal_data)
-            
+        st.success(EVENT_DATA)            
             
     else:
         st.error('Failed to trigger webhook.')
