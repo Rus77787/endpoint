@@ -25,7 +25,9 @@ report_ctx = _get_websocket_headers()
 if report_ctx is not None:
     request_body = report_ctx.request_body_bytes
     if request_body:
-        handle_webhook(request_body.decode('utf-8'))
+#         handle_webhook(request_body.decode('utf-8'))
+        handle_webhook(request_body)
+        
         st.success("Webhook request handled successfully.")
 else:
     st.write("Listening for incoming webhook requests...")
