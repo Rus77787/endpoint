@@ -21,7 +21,7 @@ def handle_webhook(data):
 st.title("Bitrix24 Webhook Endpoint")
 
 # Listen for incoming webhook requests
-report_ctx = _getwebsocket_headers()
+report_ctx = _get_websocket_headers()
 if report_ctx is not None:
     request_body = report_ctx.request_body_bytes
     if request_body:
