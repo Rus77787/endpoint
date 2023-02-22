@@ -14,7 +14,7 @@ payload = {
     "auth": "hdejdfhk7gazkb4ukj515towfpqhpnqm"
 }
 
-data = requests.request.get()
+data = requests.get()
 if data['event'] == 'ONCRMPRODUCTADD':
     deal = data['data']['FIELDS']
     deals.append(deal)
