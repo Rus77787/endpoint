@@ -15,6 +15,6 @@ payload = {
 }
 
 data = { 'name': 'This is an example for webhook' }
-requests.post(webhook_url, data=json.dumps(data), headers=payload)
+requests.post(url, data=json.dumps(data), headers=payload)
 
 
