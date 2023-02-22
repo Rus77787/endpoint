@@ -18,20 +18,34 @@ if st.button('Trigger Webhook'):
     # Check the status code of the response to ensure the webhook was successful
     if response.status_code == 200:
         st.success('Webhook triggered successfully!')
-        # Get the JSON data from the request
-        data = json.loads(request)
-    
-        # Check the event type
-        if data['event_type'] == EVENT_TYPE:
-            # Get the data for the new deal event
-            deal_data = data['event_data']
-
-            # Display the deal data in Streamlit
-            st.write('New deal created:')
-            st.write(deal_data)
-            
     else:
         st.error('Failed to trigger webhook.')
+        
+# Define the route for the webhook endpoint
+@st.cache(allow_output_mutation=True)
+def webhook(request):
+    # Get the JSON data from the request
+    data = json.loads(request)
+    
+    # Check the event type
+    if data['event_type'] == 'new_deal':
+        # Get the data for the new deal event
+        deal_data = data['event_data']
+        
+        # Display the deal data in Streamlit
+        st.write('New deal created:')
+        st.write(deal_data)
+    
+    return 'Webhook received.'
+
+# Run the app
+if __name__ == '__main__':
+    # Get the request data from Bitrix24
+    request = EVENT_TYPE
+    
+    # Trigger the webhook
+    if request:
+        webhook(request)
 
         
 
