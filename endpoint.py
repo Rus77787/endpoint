@@ -1,4 +1,4 @@
-!pip install flask
+
 import streamlit as st
 from flask import Flask, request, jsonify
 
