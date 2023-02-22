@@ -1,14 +1,16 @@
+!pip install flask
 import streamlit as st
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route('/webhook', methods=['POST'])
-def handle_webhook():
-    st.write(request.json)
-    return 'OK'
+@app.route('/bitrix24-webhook', methods=['POST'])
+def bitrix24_webhook():
+    data = request.get_json()
+    st.write(data)
+    return jsonify({'status': 'success'})
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 
 
