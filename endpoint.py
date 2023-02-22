@@ -8,7 +8,7 @@ TOKEN = 'hdejdfhk7gazkb4ukj515towfpqhpnqm'
 
 # Define the event type and data to be sent to the webhook
 EVENT_TYPE = 'ONCRMDEALADD'
-EVENT_DATA = {'deal_name': 'ID'}
+EVENT_DATA = {'deal_name': ID}
 
 # Create a button in Streamlit to trigger the webhook
 if st.button('Trigger Webhook'):
