@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit.report_thread import get_report_ctx
+from streamlit.scriptrunner import get_script_run_ctx as get_report_ctx
 import requests
 import json
 
