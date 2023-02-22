@@ -21,10 +21,6 @@ if data['event'] == 'ONCRMPRODUCTADD':
     st.write(deals)
         
 
-requests.post(webhook_url, data=json.dumps(data), headers={'Content-Type': 'application/json'})
-
-# Button to create the webhook
-if st.button('Create Webhook'):
-    create_webhook()
+requests.post(url, data=json.dumps(data), headers=payload)
 
 
