@@ -20,7 +20,7 @@ if st.button('Trigger Webhook'):
         
         
         # Get the JSON data from the request
-        data = json.loads(request.data)
+        data = json.loads(requests.data)
         # Check the event type
         if data['event_type'] == EVENT_TYPE:
             # Get the data for the new deal event
