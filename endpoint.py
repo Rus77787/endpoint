@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 import json
-from bitrix24.bitrix24 import Bitrix24
+
 
 
 C_REST_CLIENT_ID = 'local.63f5dac3a863a8.66886970'
@@ -10,19 +10,6 @@ C_REST_CLIENT_SECRET = 'pE3n3dSnMTUSO7BhQafuZ0dxJdjRYbaoi0uWHAnlTq0RRt2iKI'
 # Define the endpoint URL for the webhook
 BITRIX_WEBHOOK_URL = "http://endpoint.streamlit.app"
 TOKEN = 'hdejdfhk7gazkb4ukj515towfpqhpnqm'
-
-bx24 = Bitrix24(
-    'https://rosasprings.bitrix24.ru/rest/',
-    TOKEN
-)
-
-bx24.call(
-    'event.bind',
-    {
-        'event': 'ONCRDEALADD',
-        'handler': 'https://endpoint.streamlit.app/'
-    }
-)
 
 
 # Define the event type and data to be sent to the webhook
