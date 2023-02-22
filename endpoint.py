@@ -28,7 +28,7 @@ def webhook(request):
     data = json.loads(request)
     
     # Check the event type
-    if data['event_type'] == 'new_deal':
+    if data['event_type'] == EVENT_TYPE:
         # Get the data for the new deal event
         deal_data = data['event_data']
         
