@@ -4,12 +4,9 @@ import json
 
 
 
-C_REST_CLIENT_ID = 'local.63f5dac3a863a8.66886970'
-C_REST_CLIENT_SECRET = 'pE3n3dSnMTUSO7BhQafuZ0dxJdjRYbaoi0uWHAnlTq0RRt2iKI'
-
-# Define the endpoint URL for the webhook
-BITRIX_WEBHOOK_URL = "http://endpoint.streamlit.app"
-TOKEN = 'hdejdfhk7gazkb4ukj515towfpqhpnqm'
+C_REST_CLIENT_ID = 'local.63f7262142b291.82315904'
+C_REST_CLIENT_SECRET = 'UHVUSyXlPzaTSASTq5MjOctmz48qsQaEs2FNwW02kaQeXp31F3'
+BITRIX_WEBHOOK_URL = "https://endpoint.streamlit.app"
 
 
 # Define the event type and data to be sent to the webhook
