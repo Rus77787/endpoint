@@ -20,7 +20,6 @@ if st.button('Trigger Webhook'):
     # Check the status code of the response to ensure the webhook was successful
     if response.status_code == 200:
         st.success('Webhook triggered successfully!')
-        print
     else:
         st.error('Failed to trigger webhook.')
         
